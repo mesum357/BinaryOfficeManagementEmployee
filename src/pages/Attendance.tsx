@@ -323,7 +323,10 @@ const Attendance = () => {
     // Status colors and labels mapping
     const statusMap: Record<string, { label: string, color: string, icon?: any }> = {
       present: { label: 'Present', color: 'bg-success-light text-success', icon: Check },
+      early: { label: 'Early', color: 'bg-primary/10 text-primary', icon: Clock },
       late: { label: 'Late', color: 'bg-warning/10 text-warning', icon: Clock },
+      overtime: { label: 'Overtime', color: 'bg-warning/10 text-warning', icon: Clock },
+      'clocked-out': { label: 'Clocked Out', color: 'bg-success-light text-success', icon: Check },
       'half-day': { label: 'Half Day', color: 'bg-warning/10 text-warning', icon: AlertCircle },
       'on-leave': { label: 'On Leave', color: 'bg-primary/10 text-primary', icon: Calendar },
       absent: { label: 'Absent', color: 'bg-destructive/10 text-destructive', icon: AlertCircle },
@@ -360,7 +363,7 @@ const Attendance = () => {
       return (
         <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-warning/10 text-warning">
           <Clock className="w-3 h-3" />
-          {recordStatus === 'late' ? 'Late (In Progress)' : 'In Progress'}
+          {recordStatus === 'late' ? 'Late (In Progress)' : recordStatus === 'early' ? 'Early (In Progress)' : 'In Progress'}
         </span>
       );
     }
