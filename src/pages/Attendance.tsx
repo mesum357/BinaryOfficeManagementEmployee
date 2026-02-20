@@ -46,6 +46,7 @@ interface AttendanceRecord {
   };
   status: string;
   workingHours?: number;
+  overtime?: number;
   breaks?: Break[];
 }
 
@@ -724,6 +725,7 @@ const Attendance = () => {
                   <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground">Clock In</th>
                   <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground">Clock Out</th>
                   <th className="text-center py-3 px-4 text-sm font-medium text-muted-foreground">Break Time</th>
+                  <th className="text-center py-3 px-4 text-sm font-medium text-muted-foreground">Overtime</th>
                   <th className="text-center py-3 px-4 text-sm font-medium text-muted-foreground">Work Hours</th>
                   <th className="text-center py-3 px-4 text-sm font-medium text-muted-foreground">Status</th>
                 </tr>
@@ -755,6 +757,9 @@ const Attendance = () => {
                           ? formatDuration(calculateTotalBreakTime(record.breaks))
                           : '-'}
                       </td>
+                      <td className="py-4 px-4 text-center font-medium text-muted-foreground">
+                        {record.overtime ? formatDuration(record.overtime * 60) : '-'}
+                      </td>
                       <td className="py-4 px-4 text-center font-bold text-foreground">
                         {calculateRecordWorkHours(record)}
                       </td>
@@ -785,14 +790,18 @@ const Attendance = () => {
                     {getStatusBadge(record)}
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="space-y-1">
+                  <div className="grid grid-cols-3 gap-4 text-sm">
+                    <div className="space-y-1 col-span-2">
                       <p className="text-xs text-muted-foreground uppercase font-medium">Clock In/Out</p>
                       <div className="flex items-center gap-2">
                         <span className="text-success">{formatRecordTime(record.checkIn?.time)}</span>
                         <ArrowRight className="w-3 h-3 text-muted-foreground" />
                         <span className="text-destructive">{formatRecordTime(record.checkOut?.time)}</span>
                       </div>
+                    </div>
+                    <div className="space-y-1 text-right">
+                      <p className="text-xs text-muted-foreground uppercase font-medium">Overtime</p>
+                      <p className="font-medium text-muted-foreground">{record.overtime ? formatDuration(record.overtime * 60) : '-'}</p>
                     </div>
                     <div className="space-y-1 text-right">
                       <p className="text-xs text-muted-foreground uppercase font-medium">Work Hours</p>
