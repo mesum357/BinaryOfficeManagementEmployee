@@ -13,7 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/contexts/AuthContext";
 import authBg from "@/assets/auth-bg.jpg";
 import signupBg from "@/assets/signup-bg.png";
-import bmsLogo from "@/assets/bms-logo.png";
+import mmhLogo from "@/assets/bms-logo.png";
 import api from "@/lib/api";
 import { useEffect } from "react";
 
@@ -309,12 +309,12 @@ const Auth = () => {
         <div className="w-full max-w-md animate-fade-up">
           {/* Form Card with 0.5 opacity */}
           <div className="rounded-3xl p-8 shadow-xl" style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)', backdropFilter: 'blur(10px)' }}>
-            {/* BMS Logo */}
+            {/* MMH Logo */}
             <div className="flex flex-col items-center mb-6 animate-fade-in">
-              <img src={bmsLogo} alt="BMS Corporate Logo" className="w-24 h-24 object-contain" />
+              <img src={mmhLogo} alt="MMH Employee Portal Logo" className="w-24 h-24 object-contain" />
               <div className="mt-4 text-center">
-                <h2 className="text-2xl font-bold text-gray-900 tracking-tight">BMS Corporate</h2>
-                <p className="text-gray-700">Welcome to BMS corporate Employee Portal</p>
+                <h2 className="text-2xl font-bold text-gray-900 tracking-tight">MMH Employee Portal</h2>
+                <p className="text-gray-700">Welcome to MMH Employee Portal</p>
               </div>
             </div>
 
@@ -357,7 +357,7 @@ const Auth = () => {
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="john@bmscorporate.com"
+                    placeholder="john@mmh.com"
                     className={`pl-12 bg-white/70 border-gray-300 ${errors.email ? 'border-destructive' : ''}`}
                     value={formData.email}
                     onChange={handleInputChange}
@@ -551,9 +551,9 @@ const Auth = () => {
       <div className="w-full max-w-md animate-fade-up">
         {/* Form Card with 0.5 opacity */}
         <div className="rounded-3xl p-8 shadow-xl" style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)', backdropFilter: 'blur(10px)' }}>
-          {/* BMS Logo */}
+          {/* MMH Logo */}
           <div className="flex justify-center mb-4">
-            <img src={bmsLogo} alt="BMS Corporate Logo" className="w-24 h-24 object-contain" />
+            <img src={mmhLogo} alt="MMH Employee Portal Logo" className="w-24 h-24 object-contain" />
           </div>
 
           <div className="text-center mb-6">
@@ -562,7 +562,7 @@ const Auth = () => {
             </h2>
             <p className="text-gray-700">
               {mode === "login"
-                ? "Welcome to BMS corporate Employee Portal"
+                ? "Welcome to MMH Employee Portal"
                 : "Check your registration status"}
             </p>
           </div>
@@ -642,7 +642,7 @@ const Auth = () => {
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="john@bmscorporate.com"
+                    placeholder="john@mmh.com"
                     className={`pl-12 bg-white/70 border-gray-300 ${errors.email ? 'border-destructive' : ''}`}
                     value={formData.email}
                     onChange={handleInputChange}

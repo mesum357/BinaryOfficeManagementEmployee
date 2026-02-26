@@ -27,7 +27,7 @@ import { cn } from "@/lib/utils";
 import { useAuth } from "@/contexts/AuthContext";
 import { taskAPI, noticeAPI, chatAPI, meetingAPI } from "@/lib/api";
 import { useIsMobile } from "@/hooks/use-mobile";
-import bmsLogo from "@/assets/bms-logo.png";
+import mmhLogo from "@/assets/bms-logo.png";
 import {
   Sheet,
   SheetContent,
@@ -277,12 +277,12 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       <div className="h-18 flex items-center px-6 border-b border-sidebar-border">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-md flex items-center justify-center overflow-hidden">
-            <img src={bmsLogo} alt="BMS Logo" className="w-full h-full object-contain" />
+            <img src={mmhLogo} alt="MMH Logo" className="w-full h-full object-contain" />
           </div>
           {!collapsed && (
             <div className="flex flex-col">
               <span className="font-bold text-sidebar-accent-foreground text-sm uppercase tracking-wider leading-none">
-                BMS Corporate
+                MMH Employee Portal
               </span>
             </div>
           )}
