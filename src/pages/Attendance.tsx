@@ -328,6 +328,7 @@ const Attendance = () => {
       late: { label: 'Late', color: 'bg-warning/10 text-warning', icon: Clock },
       overtime: { label: 'Overtime', color: 'bg-warning/10 text-warning', icon: Clock },
       'clocked-out': { label: 'Clocked Out', color: 'bg-success-light text-success', icon: Check },
+      'early-clockout': { label: 'Early Clock Out', color: 'bg-destructive/10 text-destructive', icon: AlertCircle },
       'half-day': { label: 'Half Day', color: 'bg-warning/10 text-warning', icon: AlertCircle },
       'on-leave': { label: 'On Leave', color: 'bg-primary/10 text-primary', icon: Calendar },
       absent: { label: 'Absent', color: 'bg-destructive/10 text-destructive', icon: AlertCircle },
